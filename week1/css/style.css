@@ -1,0 +1,60 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+/*////////
+navigation bar
+////////*/
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F2F2F2;
+}
+
+
+li {
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    color: gray;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: gainsboro;
+    color: black;
+}
+
+.active {
+    background-color: white;
+    color: black;
+}
+
+.active:hover{
+    background: white;
+}
+    
+#title {
+    margin-left: 10px;
+    float: left;
+    color: black;
+}
+
+#container {
+    padding-top: 100px;
+    margin:auto;
+    width: 60%;
+}
+
+#container p {
+    margin:10px;
+}
