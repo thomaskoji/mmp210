@@ -8,13 +8,14 @@ function setup() {
     var jetBlack = color("#37342E");
     var metalic = color("#DBDBDB");
     var orange = color("#FFAF00");
+    var white = color("#E7E7E7");
     
     // canvas
     var canvasWidth = 1200;
     var canvasH = 800;
     
     // monitor
-    var monitorX = 335;
+    var monitorX = 135;
     var monitorY = 200;
     var monitorW = 530;
     var monitorH = 320;
@@ -54,11 +55,45 @@ function setup() {
     var logo1W = 50;
     var logo1H = 45;
     
+    var logoLeaf1X = logo1X + (logo1W * 0.1);
+    var logoLeaf1Y = logo1Y - (logo1H * 0.65);
+    var logoLeaf1W = logo1H * 0.3;
+    var logoLeaf1H = logo1W * 0.3;
+    var logoLeafStart1 = HALF_PI + QUARTER_PI;
+    var logoLeafEnd1 = PI + HALF_PI;
     
+    var logoLeaf2X = logo1X;
+    var logoLeaf2Y = logo1Y - (logo1H * 0.708);
+    var logoLeaf2W = logo1H * 0.3;
+    var logoLeaf2H = logo1W * 0.3;
+    var logoLeafStart2 = PI + HALF_PI + QUARTER_PI;
+    var logoLeafEnd2 = HALF_PI;
     
+    // Logo bottom
+    var logo2X = monitorX + monitorW * 0.5;
+    var logo2Y = monitorY + monitorH * 1.11;
+    var logo2W = 30;
+    var logo2H = 26;
     
+    var logo2Leaf1X = logo2X + (logo2W * 0.1);
+    var logo2Leaf1Y = logo2Y - (logo2H * 0.65);
+    var logo2Leaf1W = logo2H * 0.3;
+    var logo2Leaf1H = logo2W * 0.3;
+    var logo2LeafStart1 = HALF_PI + QUARTER_PI;
+    var logo2LeafEnd1 = PI + HALF_PI;
     
+    var logo2Leaf2X = logo2X;
+    var logo2Leaf2Y = logo2Y - (logo2H * 0.708);
+    var logo2Leaf2W = logo2H * 0.3;
+    var logo2Leaf2H = logo2W * 0.3;
+    var logo2LeafStart2 = PI + HALF_PI + QUARTER_PI;
+    var logo2LeafEnd2 = HALF_PI;
     
+    // text
+    var textX = monitorX + monitorW + 50;
+    var textY = monitorY + monitorH * 0.3;
+    var textW = canvasWidth - textX;
+    var textH = canvasH - textY;
     
     
     
@@ -99,16 +134,21 @@ function setup() {
     stroke(jetBlack);
     line(monitorLeg1X, monitorLeg1Y, monitorLeg2X, monitorLeg2Y);
     
-    // Logo
+    // Logo screen
     noStroke();
-    fill(jetBlack);
+    fill(white);
     ellipse(logo1X, logo1Y, logo1W, logo1H);
-    ellipse
+    arc(logoLeaf1X, logoLeaf1Y, logoLeaf1W, logoLeaf1H, logoLeafStart1, logoLeafEnd1, OPEN);
+    arc(logoLeaf2X, logoLeaf2Y, logoLeaf2W, logoLeaf2H, logoLeafStart2, logoLeafEnd2, OPEN);
     
+    // Bottom logo
+    fill(jetBlack);
+    ellipse(logo2X, logo2Y, logo2W, logo2H);
+    arc(logo2Leaf1X, logo2Leaf1Y, logo2Leaf1W, logo2Leaf1H, logo2LeafStart1, logo2LeafEnd1, OPEN);
+    arc(logo2Leaf2X, logo2Leaf2Y, logo2Leaf2W, logo2Leaf2H, logo2LeafStart2, logo2LeafEnd2, OPEN);
     
-    
-    
-    
-    
-    
+    // text
+    textSize(80);
+    textAlign(CENTER, TOP);
+    text("New eMac  from 4000$", textX, textY, textW, textH);
 }
