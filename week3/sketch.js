@@ -3,6 +3,7 @@ function setup() {
 //colors
 	var black = color(51);
   	var white = color(245); 
+    var red = color("#FF3636");
   
 //canvas
 	var canvasWidth = 600;
@@ -25,14 +26,6 @@ function setup() {
   	textSize(textsize);
 	fill(black);
 	text("T", tX, tY);*/
-  
-//HOMAS
-	var homasX = baseX;
-	var homasY = baseY;
-	textSize(textsize);
-    fill(black);
-	text("THOMAS", homasX,homasY);
-    
     
 //filling for O	
 	var fillingX = baseX-textsize*0.4;
@@ -40,7 +33,14 @@ function setup() {
   	var fillingRadius = textsize * 0.65;
     fill(black);
     ellipse(fillingX,fillingY,fillingRadius);
-	
+    
+//HOMAS
+	var homasX = baseX;
+	var homasY = baseY;
+	textSize(textsize);
+    fill(black);
+	text("THOMAS", homasX,homasY);
+    
 //koji
 	var kojiX = fillingX + 2;
 	var kojiY = fillingY - textsize*0.15;
@@ -59,17 +59,35 @@ function setup() {
 	var coverY = homasY;
 	var coverHeight = textsize;
 	var coverWidth = textsize;
-	rect(coverX,coverY,coverWidth,coverHeight);
+	rect(coverX,coverY,coverWidth,coverHeight); // comment out the line to reveal the original T
     
 //T
-	var tX = 100;
-	var tY = 100;
-	var tTextsize = textsize * 1.2; //something wrong with textsize. supposed to be
-	fill(black); //100 here. probably happend because the koji.
-	textSize = tTextsize;
-	text("T", tX, tY);
-
-    /*
-        NO HARD CODED VALUE
-    */	
+	var tX = 116.5;
+	var tY = 100-15;
+	fill(black);
+	textSize(textsize);
+	//text("T", tX, tY);
+    
+// the long bar atached on the right of T
+    var barX = 300;
+    var barY = 52;
+    var barW = 430;
+    var barH = 7.7;
+    rect(barX, barY, barW, barH);
+    
+// the bar that is atached on the bottom of T
+    var bar2X = 116.7;
+    var bar2Y = 95;
+    var bar2W = 9;
+    var bar2H = 80;
+    rect(bar2X, bar2Y, bar2W, bar2H);
+    
+//filling for A
+    beginShape();
+    vertex(412, 65);
+    vertex(395, 110);
+    vertex(430, 110);
+    endShape(CLOSE);
+    
+    
 } 
