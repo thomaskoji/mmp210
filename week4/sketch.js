@@ -1,38 +1,50 @@
 // system variables
-var ellipseWidth = 0;
 
 function setup() {
-    createCanvas(640, 480);
-    x = 1;
+    createCanvas(1000, 1000);
     textSize(100);
 }
 
 function draw() {
-    x++;
     background('white');
-    ellipse(mouseX,mouseY,100,100);
-    fill("lightblue");
-    fill(frameCount, frameCount/2 ,frameCount/3);
+
     
-    var shapeSize = 100;
     
-    if (mouseX < width/2){
-        rectMode(CENTER);
-        rect(pmouseX,pmouseY, 50, 50);
-    } else {
-        fill("red");
-        ellipse(pmouseX,pmouseY,50,50);
+    
+// Grids
+    var lineX1 = 0 ;
+    var lineY1 = 10;
+    var lineX2 = width;
+    var lineY2 = lineY1;
+    
+    while (lineY1 < height) {
+        line(lineX1, lineY1, lineX2, lineY2);
+        lineY1 += 10;
+        lineY2 += 10;
     }
     
-    var ellipseWidth;
-    if ( frameCount > width/2) {
-        ellipseWidth = o;
-    }else{
-        ellipseWidth = frameCount;
+    var lineX1 = 10 ;
+    var lineY1 = 0;
+    var lineX2 = lineX1;
+    var lineY2 = height;
+    
+    while (lineX1 < width) {
+        line(lineX1, lineY1, lineX2, lineY2);
+        lineX1 += 10;
+        lineX2 += 10;
     }
-    ellipse(pmouseX, pmouseY, ellipseWidth,50);
+    
+//user's sname
+    fill('black');
+    rect(mouseX,mouseY,10,10);
+    rect(490,490,10,10);
+    rect(480,480,10,10);
+    rect(470,470,10,10);
+    rect(460,460,10,10);
+    
+    
+    
 }
 
-// make the snake game
 
 //p5 site ni ii sankou code ga aruyo wwww haHAA
